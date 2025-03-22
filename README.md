@@ -1,9 +1,11 @@
 # Kubernetes Failure Prediction and Anomaly Detection
 
-This repository contains a project for predicting failures and detecting anomalies in Kubernetes clusters using machine learning. The project includes data preprocessing, model training with various machine learning algorithms, and an advanced analysis pipeline that derives anomalies from the original dataset.
+This repository contains a project dedicated to predicting failures and detecting anomalies in Kubernetes clusters using machine learning. It includes data preprocessing, model training with various ML algorithms, and an advanced analysis pipeline for deriving anomalies from the original dataset.
 
 ## File Structure
 
+```
+.
 ├── data
 │   └── dataset.txt
 ├── models
@@ -15,38 +17,38 @@ This repository contains a project for predicting failures and detecting anomali
     ├── K8_preprocessing.ipynb
     ├── K8_model_training&evaluation-1.ipynb
     └── K8_model_training&evaluation-11.ipynb
+```
 
 ## Requirements
 
-* **Python 3.x**
-* Required packages (see `requirements.txt` if available):
-  * pandas
-  * numpy
-  * scikit-learn
-  * xgboost
-  * tensorflow (if using deep learning models)
-  * matplotlib
-  * seaborn
+- **Python 3.x**
+  - `pandas`
+  - `numpy`
+  - `scikit-learn`
+  - `xgboost`
+  - `tensorflow` (if using deep learning models)
+  - `matplotlib`
+  - `seaborn`
 
 ## How to Use
 
-1. **Preprocessing:**
+1. **Preprocessing**
 
-   Open and run the `01_Preprocessing.ipynb` notebook. This notebook:
+   - Open and run **`K8_preprocessing.ipynb`**.  
+   - This notebook loads the dataset, cleans and preprocesses time-related columns, engineers additional features (including derived metrics and failure flags), and detects/normalizes anomalies.
 
-   * Loads the dataset.
-   * Cleans and preprocesses time-related columns.
-   * Engineers features including derived metrics and failure flags.
-   * Detects anomalies and normalizes the data.
-2. **Model Training:**
+2. **Model Training**
 
-   Open and run the `02_Model_Training.ipynb` notebook. This notebook:
+   - Open and run **`K8_model_training&evaluation-1.ipynb`**.  
+   - This notebook trains multiple machine learning models (e.g., Logistic Regression, Random Forest, Decision Tree, XGBoost) on the preprocessed data.  
+   - It also evaluates the models and saves the best-performing ones in the `models` folder.
 
-   * Trains various machine learning models (e.g., Logistic Regression, Random Forest, Decision Tree, XGBoost) on the preprocessed data.
-   * Evaluates the models and saves the best-performing ones in the **models** folder.
-3. **Advanced Anomaly Detection:**
+3. **Advanced Anomaly Detection**
 
-   Open and run the `03_Advanced_Anomaly_Detection.ipynb` notebook. This notebook:
+   - Open and run **`K8_model_training&evaluation-11.ipynb`**.  
+   - This notebook derives anomaly-specific features from the original dataset.  
+   - It then trains a model specifically for anomaly prediction based on these derived features.
 
-   * Uses the original dataset to derive anomaly-specific features.
-   * Trains a model to predict anomalies based on these derived features.
+---
+
+Feel free to adjust any file or notebook names to match your exact workflow.
